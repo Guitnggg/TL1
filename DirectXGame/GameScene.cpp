@@ -102,6 +102,14 @@ void GameScene::Initialize() {
             model_ = it->second; 
         }
 
+        Object3d* newObject = Object3d::Create(model_);
+
+        // 位置の確認
+
+        // 回転の確認
+
+        // 拡大縮小
+
     }
 }
 
