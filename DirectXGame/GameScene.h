@@ -2,6 +2,8 @@
 
 #include "KamataEngine.h"
 
+#include <map>
+
 class GameScene{
 public:
 
@@ -31,19 +33,19 @@ public:
     /// オブジェクト 1個分のデータ
     /// </summary>
     struct ObjectData {
-        std::string type; //"type"
-        std::string name; //"name"
+        std::string type;  // "type"
+        std::string name;  // "name"
 
         //"transform"
         struct Transform {
-            KamataEngine::Vector3 translation; //"translation"
-            KamataEngine::Vector3 rotation;    //"rotation"
-            KamataEngine::Vector3 scaling;     //"scaling"
+            KamataEngine::Vector3 translation;  // "translation"
+            KamataEngine::Vector3 rotation;     // "rotation"
+            KamataEngine::Vector3 scaling;      // "scaling"
         };
 
-        Transform transform; // メンバの準備
+        Transform transform;  // メンバの準備
 
-        //"file name"
+        // "file name"
         std::string file_name;
     };
 
@@ -51,10 +53,10 @@ public:
     /// レベルデータ
     /// </summary>
     struct LevelData {
-        //"name"
+        // "name"
         std::string name;
 
-        //"object"
+        // "object"
         std::vector<ObjectData> objects;
     };
 
@@ -62,5 +64,6 @@ private:
 
     KamataEngine::Camera camera_;
     KamataEngine::Model* model_ = nullptr;
+    std::map<std::string, KamataEngine::Model*> models;
 };
 

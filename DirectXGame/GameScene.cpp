@@ -61,8 +61,8 @@ void GameScene::Initialize() {
             levelData->objects.emplace_back(ObjectData{});
             ObjectData& objectData = levelData->objects.back();  // 追加要素の参照を用意し可読性もよくなる
 
-            objectData.type = object["type"].get<std::string>();  // 
-            objectData.name = object["name"].get<std::string>();  // 
+            objectData.type = object["type"].get<std::string>();  // "type"
+            objectData.name = object["name"].get<std::string>();  // "name"
 
             // トランスフォームのパラメーター読み込み
             nlohmann::json& transform = object["transform"];
@@ -81,13 +81,27 @@ void GameScene::Initialize() {
             objectData.transform.scaling.x = (float)transform["scaling"][0];
             objectData.transform.scaling.y = (float)transform["scaling"][2];
             objectData.transform.scaling.z = (float)transform["scaling"][1];
-            
+
             // "file_name"
             if (object.contains("file_name")) {
                 objectData.file_name = object["file_name"].get<std::string>();
             }
 
         }
+    }
+
+    //==================================================
+    // レベルデータを構造体に格納していく
+    //==================================================
+
+    // レベルデータからオブジェクトを生成、配置
+    for (auto& objectData : levelData->objects) {
+        // ファイル名から登録済みモデルを検索
+        decltype(models)::iterator it = models.find(objectData.file_name);
+        if (it != models.end()) { 
+            model_ = it->second; 
+        }
+
     }
 }
 
