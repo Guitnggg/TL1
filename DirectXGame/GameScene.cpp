@@ -38,6 +38,24 @@ void GameScene::Initialize() {
     std::string name = deserialized["name"].get<std::string>();
     // 正しいレベルデータファイルかチェック
     assert(name.compare("scene") == 0);
+
+    // レベルデータ格納用インスタンスを生成
+    LevelData* levelData = new LevelData();
+
+    // "objects"の全オブジェクトを走査
+    for (nlohmann::json& object : deserialized["objects"]) {
+        assert(object.contains("type"));
+
+        // 種類を判別
+        std::string type = object["type"].get<std::string>();
+
+        // 種類ごとの処理
+
+        // 再起関数
+
+    }
+
+
 }
 
 void GameScene::Update() {
