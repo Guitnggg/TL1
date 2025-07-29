@@ -96,26 +96,28 @@ void GameScene::Initialize() {
 
     // レベルデータからオブジェクトを生成、配置
     for (auto& objectData : levelData->objects) {
-        // ファイル名から登録済みモデルを検索
-        decltype(models)::iterator it = models.find(objectData.file_name);
-        if (it != models.end()) { 
-            model_ = it->second; 
+        // モデルを取得（ファイル名から）
+        Model* model = nullptr;
+        if (models.contains(objectData.file_name)) {
+            model = models[objectData.file_name];
         }
         else {
-            model_ = Model::CreateFromOBJ(objectData.file_name);
-            models[objectData.file_name] = model_;
+            model = Model::CreateFromOBJ(objectData.file_name);
+            models[objectData.file_name] = model;
         }
 
-        // WorldTransform 初期化
-        SimpleObject simpleObj;
-        simpleObj.model = model_;
-        simpleObj.worldTransform.Initialize();
-        simpleObj.worldTransform.translation_ = objectData.transform.translation;
-        simpleObj.worldTransform.rotation_ = objectData.transform.rotation;
-        simpleObj.worldTransform.scale_ = objectData.transform.scaling;
+        // WorldTransformを生成
+        WorldTransform* newObject = new WorldTransform();
+        newObject->Initialize(); // ワールド行列の初期化（親子構造があれば親を渡す）
 
-        // リストに追加
-        simpleObjects_.push_back(simpleObj);
+        // 各トランスフォーム設定
+        newObject->translation_ = objectData.transform.translation;
+        newObject->rotation_ = objectData.transform.rotation;
+        newObject->scale_ = objectData.transform.scaling;
+
+        // 保持しておく（描画で使うため）
+        worldTransforms_.emplace_back(std::make_pair(newObject, model));
+
     }
 }
 

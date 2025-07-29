@@ -4,7 +4,7 @@
 
 #include <map>
 
-class GameScene{
+class GameScene {
 public:
 
     /// <summary>
@@ -67,10 +67,6 @@ private:
     KamataEngine::Model* model_ = nullptr;
     std::map<std::string, KamataEngine::Model*> models;
 
-    struct SimpleObject {
-    KamataEngine::WorldTransform worldTransform;
-    KamataEngine::Model* model;
-};
-std::vector<SimpleObject> simpleObjects_;
+    std::vector<std::pair<KamataEngine::WorldTransform*, KamataEngine::Model*>> worldTransforms_;
 };
 
