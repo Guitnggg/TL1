@@ -129,7 +129,13 @@ void GameScene::Update() {
 }
 
 void GameScene::Draw() {
+    // 描画前処理
+    Model::PreDraw();
+
     for (auto& [wt, model] : objects_) {
         model->Draw(*wt, camera_);
     }
+
+    // 描画後処理
+    Model::PostDraw();
 }
