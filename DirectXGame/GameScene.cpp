@@ -88,7 +88,7 @@ void GameScene::Initialize() {
 
             // オブジェクト走査を再起関数にまとめ、再帰呼出で枝を走査する
             if (object.contains("children")) {
-                objectData.file_name = object["children"].get<std::string>();
+
             }
 
             // "file_name"
