@@ -62,11 +62,10 @@ public:
 
 private:
 
-    KamataEngine::WorldTransform worldTransform_;
     KamataEngine::Camera camera_;
-    KamataEngine::Model* model_ = nullptr;
+   
     std::map<std::string, KamataEngine::Model*> models;
 
-    std::vector<std::pair<KamataEngine::WorldTransform*, KamataEngine::Model*>> worldTransforms_;
+    std::vector<std::pair<KamataEngine::WorldTransform*, KamataEngine::Model*>> objects_;
 };
 

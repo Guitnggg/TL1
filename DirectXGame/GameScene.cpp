@@ -9,6 +9,10 @@
 using namespace KamataEngine;
 
 GameScene::~GameScene() {
+    for (auto& [wt, model] : objects_) {
+        delete wt;
+    }
+    objects_.clear();
 
 }
 
@@ -96,29 +100,29 @@ void GameScene::Initialize() {
 
     // レベルデータからオブジェクトを生成、配置
     for (auto& objectData : levelData->objects) {
-        // モデルを取得（ファイル名から）
-        Model* model = nullptr;
-        if (models.contains(objectData.file_name)) {
-            model = models[objectData.file_name];
+        // ファイル名から登録済みモデルを検索
+        KamataEngine::Model* model = nullptr;
+        decltype(models)::iterator it = models.find(objectData.file_name);
+        if (it != models.end()) {
+            model = it->second;
         }
         else {
-            model = Model::CreateFromOBJ(objectData.file_name);
+            model = KamataEngine::Model::CreateFromOBJ(objectData.file_name);
             models[objectData.file_name] = model;
         }
 
-        // WorldTransformを生成
-        WorldTransform* newObject = new WorldTransform();
-        newObject->Initialize(); // ワールド行列の初期化（親子構造があれば親を渡す）
+        // WorldTransform生成・初期化
+        WorldTransform* wt = new WorldTransform();            // モデルを指定して3Dオブジェクトを生成
+        wt->translation_ = objectData.transform.translation;  // 位置の設定
+        wt->rotation_ = objectData.transform.rotation;        // 回転の設定
+        wt->scale_ = objectData.transform.scaling;            // 拡大縮小
+        wt->Initialize();
 
-        // 各トランスフォーム設定
-        newObject->translation_ = objectData.transform.translation;
-        newObject->rotation_ = objectData.transform.rotation;
-        newObject->scale_ = objectData.transform.scaling;
-
-        // 保持しておく（描画で使うため）
-        worldTransforms_.emplace_back(std::make_pair(newObject, model));
-
+        // モデルとWorldTransformをセットで登録
+        objects_.emplace_back(wt, model);
     }
+
+    camera_.Initialize();
 }
 
 void GameScene::Update() {
@@ -126,5 +130,7 @@ void GameScene::Update() {
 }
 
 void GameScene::Draw() {
-   
+    for (auto& [wt, model] : objects_) {
+        model->Draw(*wt, camera_);
+    }
 }
