@@ -101,22 +101,28 @@ void GameScene::Initialize() {
         if (it != models.end()) { 
             model_ = it->second; 
         }
+        else {
+            model_ = Model::CreateFromOBJ(objectData.file_name);
+            models[objectData.file_name] = model_;
+        }
 
-        Object3d* newObject = Object3d::Create(model_);
+        // WorldTransform 初期化
+        SimpleObject simpleObj;
+        simpleObj.model = model_;
+        simpleObj.worldTransform.Initialize();
+        simpleObj.worldTransform.translation_ = objectData.transform.translation;
+        simpleObj.worldTransform.rotation_ = objectData.transform.rotation;
+        simpleObj.worldTransform.scale_ = objectData.transform.scaling;
 
-        // 位置の確認
-
-        // 回転の確認
-
-        // 拡大縮小
-
+        // リストに追加
+        simpleObjects_.push_back(simpleObj);
     }
 }
 
 void GameScene::Update() {
-
+   
 }
 
 void GameScene::Draw() {
-
+   
 }

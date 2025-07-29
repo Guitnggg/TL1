@@ -62,8 +62,15 @@ public:
 
 private:
 
+    KamataEngine::WorldTransform worldTransform_;
     KamataEngine::Camera camera_;
     KamataEngine::Model* model_ = nullptr;
     std::map<std::string, KamataEngine::Model*> models;
+
+    struct SimpleObject {
+    KamataEngine::WorldTransform worldTransform;
+    KamataEngine::Model* model;
+};
+std::vector<SimpleObject> simpleObjects_;
 };
 
