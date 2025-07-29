@@ -86,6 +86,11 @@ void GameScene::Initialize() {
             objectData.transform.scaling.y = (float)transform["scale"][2];
             objectData.transform.scaling.z = (float)transform["scale"][1];
 
+            // オブジェクト走査を再起関数にまとめ、再帰呼出で枝を走査する
+            if (object.contains("children")) {
+                objectData.file_name = object["children"].get<std::string>();
+            }
+
             // "file_name"
             if (object.contains("file_name")) {
                 objectData.file_name = object["file_name"].get<std::string>();
@@ -125,7 +130,10 @@ void GameScene::Initialize() {
 }
 
 void GameScene::Update() {
-   
+    for (auto& [wt, model] : objects_) {
+        wt->matWorld_ = MathUtility::MakeTranslateMatrix(wt->translation_);
+        wt->TransferMatrix();
+    }
 }
 
 void GameScene::Draw() {

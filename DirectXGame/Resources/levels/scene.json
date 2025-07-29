@@ -45,11 +45,11 @@
         },
         {
             "type": "MESH",
-            "name": "Cube1",
+            "name": "ICO球",
             "transform": {
                 "translation": [
-                    3.0,
-                    3.0,
+                    0.0,
+                    0.0,
                     0.0
                 ],
                 "rotation": [
@@ -58,12 +58,12 @@
                     0.0
                 ],
                 "scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    2.0,
+                    2.0,
+                    2.0
                 ]
             },
-            "file_name": "Cube",
+            "file_name": "player",
             "collider": {
                 "type": [
                     0.0,
@@ -75,52 +75,50 @@
                     2.0,
                     2.0
                 ]
+            }
+        },
+        {
+            "type": "MESH",
+            "name": "立方体",
+            "transform": {
+                "translation": [
+                    10.0,
+                    10.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]
             },
-            "children": [
-                {
-                    "type": "MESH",
-                    "name": "Cube2",
-                    "transform": {
-                        "translation": [
-                            -6.0,
-                            0.0,
-                            0.0
-                        ],
-                        "rotation": [
-                            0.0,
-                            -0.0,
-                            0.0
-                        ],
-                        "scale": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ]
-                    },
-                    "file_name": "Cube",
-                    "collider": {
-                        "type": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ],
-                        "size": [
-                            2.0,
-                            2.0,
-                            2.0
-                        ]
-                    }
-                }
-            ]
+            "file_name": "cube",
+            "collider": {
+                "type": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]
+            }
         },
         {
             "type": "MESH",
             "name": "立方体.001",
             "transform": {
                 "translation": [
-                    8.0,
-                    -8.0,
-                    0.0
+                    0.0,
+                    0.0,
+                    10.0
                 ],
                 "rotation": [
                     0.0,
@@ -128,12 +126,12 @@
                     0.0
                 ],
                 "scale": [
-                    1.0,
-                    1.0,
-                    2.674207925796509
+                    2.0,
+                    2.0,
+                    2.0
                 ]
             },
-            "file_name": "Cube",
+            "file_name": "cube",
             "collider": {
                 "type": [
                     0.0,
@@ -145,52 +143,16 @@
                     2.0,
                     2.0
                 ]
-            },
-            "children": [
-                {
-                    "type": "MESH",
-                    "name": "立方体",
-                    "transform": {
-                        "translation": [
-                            -16.0,
-                            0.0,
-                            0.0
-                        ],
-                        "rotation": [
-                            0.0,
-                            -0.0,
-                            0.0
-                        ],
-                        "scale": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ]
-                    },
-                    "file_name": "Cube",
-                    "collider": {
-                        "type": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ],
-                        "size": [
-                            2.0,
-                            2.0,
-                            2.0
-                        ]
-                    }
-                }
-            ]
+            }
         },
         {
             "type": "MESH",
-            "name": "ICO球",
+            "name": "立方体.002",
             "transform": {
                 "translation": [
-                    0.0,
-                    0.0,
-                    5.126941680908203
+                    -10.0,
+                    -10.0,
+                    0.0
                 ],
                 "rotation": [
                     0.0,
@@ -198,12 +160,46 @@
                     0.0
                 ],
                 "scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    2.0,
+                    2.0,
+                    2.0
                 ]
             },
-            "file_name": "Player",
+            "file_name": "cube",
+            "collider": {
+                "type": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]
+            }
+        },
+        {
+            "type": "MESH",
+            "name": "立方体.003",
+            "transform": {
+                "translation": [
+                    0.0,
+                    0.0,
+                    -10.0
+                ],
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]
+            },
+            "file_name": "cube",
             "collider": {
                 "type": [
                     0.0,
