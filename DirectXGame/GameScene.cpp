@@ -71,26 +71,25 @@ void GameScene::Initialize() {
             // トランスフォームのパラメーター読み込み
             nlohmann::json& transform = object["transform"];
 
-            // 平行移動"transform"
+            // 平行移動
             objectData.transform.translation.x = (float)transform["translation"][0];
             objectData.transform.translation.y = (float)transform["translation"][2];
             objectData.transform.translation.z = (float)transform["translation"][1];
 
-            // 回転角"rotation"
+            // 回転角
             objectData.transform.rotation.x = -(float)transform["rotation"][0];
             objectData.transform.rotation.y = -(float)transform["rotation"][2];
             objectData.transform.rotation.z = -(float)transform["rotation"][1];
 
-            // 拡大縮小"scaling"
-            objectData.transform.scaling.x = (float)transform["scaling"][0];
-            objectData.transform.scaling.y = (float)transform["scaling"][2];
-            objectData.transform.scaling.z = (float)transform["scaling"][1];
+            // 拡大縮小
+            objectData.transform.scaling.x = (float)transform["scale"][0];
+            objectData.transform.scaling.y = (float)transform["scale"][2];
+            objectData.transform.scaling.z = (float)transform["scale"][1];
 
             // "file_name"
             if (object.contains("file_name")) {
                 objectData.file_name = object["file_name"].get<std::string>();
             }
-
         }
     }
 
@@ -107,7 +106,7 @@ void GameScene::Initialize() {
             model = it->second;
         }
         else {
-            model = KamataEngine::Model::CreateFromOBJ(objectData.file_name);
+            model = Model::CreateFromOBJ(objectData.file_name);
             models[objectData.file_name] = model;
         }
 
