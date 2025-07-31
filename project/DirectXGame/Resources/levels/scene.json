@@ -2,40 +2,6 @@
     "name": "scene",
     "objects": [
         {
-            "type": "MESH",
-            "name": "Cube",
-            "transform": {
-                "translation": [
-                    -10.0,
-                    -9.465970993041992,
-                    0.0
-                ],
-                "rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            },
-            "file_name": "cube",
-            "collider": {
-                "type": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "size": [
-                    2.0,
-                    2.0,
-                    2.0
-                ]
-            }
-        },
-        {
             "type": "LIGHT",
             "name": "Light",
             "transform": {
@@ -79,25 +45,25 @@
         },
         {
             "type": "MESH",
-            "name": "player",
+            "name": "ICO球",
             "transform": {
                 "translation": [
                     0.0,
-                    -40.0,
+                    0.0,
                     0.0
                 ],
                 "rotation": [
-                    90.00000762939453,
+                    0.0,
                     -0.0,
-                    179.99998474121094
+                    0.0
                 ],
                 "scale": [
-                    2.0,
-                    2.0,
-                    2.0
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             },
-            "file_name": "player",
+            "file_name": "enemy",
             "collider": {
                 "type": [
                     0.0,
@@ -105,19 +71,19 @@
                     0.0
                 ],
                 "size": [
-                    1.0,
-                    1.0,
-                    1.0
+                    2.0,
+                    2.0,
+                    2.0
                 ]
             }
         },
         {
             "type": "MESH",
-            "name": "Cube.002",
+            "name": "ICO球.001",
             "transform": {
                 "translation": [
                     10.0,
-                    -32.86138916015625,
+                    0.0,
                     0.0
                 ],
                 "rotation": [
@@ -131,7 +97,7 @@
                     1.0
                 ]
             },
-            "file_name": "cube",
+            "file_name": "enemy",
             "collider": {
                 "type": [
                     0.0,
@@ -147,12 +113,12 @@
         },
         {
             "type": "MESH",
-            "name": "Cube.003",
+            "name": "ICO球.002",
             "transform": {
                 "translation": [
+                    -10.0,
                     0.0,
-                    -39.0,
-                    5.0
+                    0.0
                 ],
                 "rotation": [
                     0.0,
@@ -165,7 +131,7 @@
                     1.0
                 ]
             },
-            "file_name": "cube",
+            "file_name": "enemy",
             "collider": {
                 "type": [
                     0.0,
@@ -181,12 +147,12 @@
         },
         {
             "type": "MESH",
-            "name": "Cube.004",
+            "name": "ICO球.003",
             "transform": {
                 "translation": [
                     0.0,
-                    -22.922466278076172,
-                    -5.0
+                    0.0,
+                    10.0
                 ],
                 "rotation": [
                     0.0,
@@ -199,7 +165,41 @@
                     1.0
                 ]
             },
-            "file_name": "cube",
+            "file_name": "enemy",
+            "collider": {
+                "type": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]
+            }
+        },
+        {
+            "type": "MESH",
+            "name": "ICO球.004",
+            "transform": {
+                "translation": [
+                    0.0,
+                    0.0,
+                    -10.0
+                ],
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "file_name": "enemy",
             "collider": {
                 "type": [
                     0.0,
