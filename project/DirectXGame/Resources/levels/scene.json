@@ -2,6 +2,40 @@
     "name": "scene",
     "objects": [
         {
+            "type": "MESH",
+            "name": "Cube",
+            "transform": {
+                "translation": [
+                    -10.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "file_name": "cube",
+            "collider": {
+                "type": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]
+            }
+        },
+        {
             "type": "LIGHT",
             "name": "Light",
             "transform": {
@@ -45,17 +79,17 @@
         },
         {
             "type": "MESH",
-            "name": "ICO球",
+            "name": "Cube.001",
             "transform": {
                 "translation": [
                     0.0,
-                    0.0,
+                    -13.163641929626465,
                     0.0
                 ],
                 "rotation": [
-                    0.0,
+                    90.00000762939453,
                     -0.0,
-                    0.0
+                    179.99998474121094
                 ],
                 "scale": [
                     2.0,
@@ -71,19 +105,19 @@
                     0.0
                 ],
                 "size": [
-                    2.0,
-                    2.0,
-                    2.0
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             }
         },
         {
             "type": "MESH",
-            "name": "立方体",
+            "name": "Cube.002",
             "transform": {
                 "translation": [
                     10.0,
-                    10.0,
+                    0.0,
                     0.0
                 ],
                 "rotation": [
@@ -92,9 +126,9 @@
                     0.0
                 ],
                 "scale": [
-                    2.0,
-                    2.0,
-                    2.0
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             },
             "file_name": "cube",
@@ -113,12 +147,12 @@
         },
         {
             "type": "MESH",
-            "name": "立方体.001",
+            "name": "Cube.003",
             "transform": {
                 "translation": [
                     0.0,
-                    0.0,
-                    10.0
+                    -4.0,
+                    5.0
                 ],
                 "rotation": [
                     0.0,
@@ -126,9 +160,9 @@
                     0.0
                 ],
                 "scale": [
-                    2.0,
-                    2.0,
-                    2.0
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             },
             "file_name": "cube",
@@ -147,12 +181,12 @@
         },
         {
             "type": "MESH",
-            "name": "立方体.002",
+            "name": "Cube.004",
             "transform": {
                 "translation": [
-                    -10.0,
-                    -10.0,
-                    0.0
+                    0.0,
+                    8.0,
+                    -5.0
                 ],
                 "rotation": [
                     0.0,
@@ -160,43 +194,9 @@
                     0.0
                 ],
                 "scale": [
-                    2.0,
-                    2.0,
-                    2.0
-                ]
-            },
-            "file_name": "cube",
-            "collider": {
-                "type": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "size": [
-                    2.0,
-                    2.0,
-                    2.0
-                ]
-            }
-        },
-        {
-            "type": "MESH",
-            "name": "立方体.003",
-            "transform": {
-                "translation": [
-                    0.0,
-                    0.0,
-                    -10.0
-                ],
-                "rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "scale": [
-                    2.0,
-                    2.0,
-                    2.0
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             },
             "file_name": "cube",
